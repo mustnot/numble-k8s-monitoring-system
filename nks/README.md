@@ -8,18 +8,16 @@
     $ echo 'export NCLOUD_SECRET_KEY=<secret_key>' >> ~/.zshrc
     $ echo 'export NCLOUD_REGION=KR' >> ~/.zshrc
     ```
-    
+
+<br>
 
 ## 2. Use Ncloud Terraform Provider
 
-<aside>
-<img src="/icons/info-alternate_red.svg" alt="/icons/info-alternate_red.svg" width="40px" /> 앞서 설정한 것처럼 환경 변수에 인증키가 저장되어있다면, 파일 내부에 키 값을 입력하지 않아도 된다.
-
-</aside>
+> 앞서 설정한 것처럼 환경 변수에 인증키가 저장되어있다면, 파일 내부에 키 값을 입력하지 않아도 된다.
 
 - `versions.tf` 파일을 생성한 후에 아래 `provider`를 정의한다.
     
-    ```json
+    ```terraform
     terraform {
       required_providers {
         ncloud = {
@@ -36,16 +34,19 @@
     ```
     
 
+<br>
+
 ## 3. Create Kubernetes Service Cluster
 
-<aside>
-<img src="/icons/info-alternate_green.svg" alt="/icons/info-alternate_green.svg" width="40px" /> 실제 콘솔 내 이미지와 비교하며 이해하면 더 좋습니다.
+> 실제 콘솔 내 화면과 비교하며 이해하면 더 좋습니다.
 
-</aside>
+
+<br>
+
 
 ### 1) VPC 및 Subnet 생성
 
-```yaml
+```terraform
 // main.tf
 resource "ncloud_vpc" "vpc" {
   name            = "vpc"
@@ -75,9 +76,11 @@ resource "ncloud_subnet" "lb_subnet" {
 
 - 클러스터를 생성하기 전에 VPC를 생성하고, VPC 아래 Subnet과 LB Private Subnet을 생성합니다.
 
+<br>
+
 ### 2) 클러스터 및 인증키 설정
 
-```yaml
+```terraform
 
 data "ncloud_nks_versions" "version" {
   filter {
@@ -116,9 +119,11 @@ resource "ncloud_nks_cluster" "cluster" {
     - kubernetes 클러스터를 생성합니다.
     - 앞서 생성한 VPC와 Subnet, LB Private Subnet이 모두 설정에 포함합니다.
 
+<br>
+
 ### 3) 노드 풀 설정
 
-```yaml
+```terraform
 data "ncloud_server_image" "image" {
   filter {
     name = "product_name"
@@ -172,6 +177,8 @@ resource "ncloud_nks_node_pool" "node_pool" {
     - 지정한 이미지와 함께 cpu 개수, 메모리 사이즈, 디스크 종류를 지정하는 data source 입니다.
 - ncloud_nks_node_pool
     - 노드에 대한 이름을 지정하고, auto scaling 설정과 개수를 지정합니다.
+
+<br>
 
 ### 4. 실행
 
