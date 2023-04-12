@@ -40,6 +40,7 @@ data "ncloud_nks_versions" "version" {
     regex = true
   }
 }
+
 resource "ncloud_login_key" "loginkey" {
   key_name = "numble-cluster-key"
 }
@@ -98,8 +99,8 @@ resource "ncloud_nks_node_pool" "node_pool" {
   product_code   = data.ncloud_server_product.product.product_code
   subnet_no      = ncloud_subnet.node_subnet.id
   autoscale {
-    enabled = true
+    enabled = false
     min = 1
-    max = 2
+    max = 1
   }
 }
