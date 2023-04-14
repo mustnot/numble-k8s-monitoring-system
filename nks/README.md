@@ -207,3 +207,25 @@ ncloud_nks_cluster.cluster: Still creating... [30s elapsed]
 - 모든 명령어를 실행하면 아래 이미지와 같이 클러스터가 자동으로 생성됩니다.
 
 ![image](https://user-images.githubusercontent.com/52126612/231485574-b3b809d4-be60-448f-96b0-17d35902e420.png)
+
+
+<br>
+
+### 5. Route Table 연결
+
+```yaml
+data "ncloud_route_table" "route_table" {
+  vpc_no                = ncloud_vpc.vpc.id
+  supported_subnet_type = "PRIVATE"
+}
+
+resource "ncloud_route" "route_table" {
+  route_table_no          = data.ncloud_route_table.route_table.id
+  destination_cidr_block  = "0.0.0.0/0"
+  target_type             = "NATGW"
+  target_name             = ncloud_nat_gateway.nat.name
+  target_no               = ncloud_nat_gateway.nat.id
+}
+```
+
+- 쿠버네티스 클러스터를 생성하더라도 VPC 내부에 생성하였기에 인터넷 연결이 되지 않아 패키지를 설치하지 못하는 경우가 생긴다. 이를 해결하기 위해 `route_table`을 설정하여 `nat`로 외부 네트워크와 연결해야 한다.
