@@ -213,7 +213,7 @@ ncloud_nks_cluster.cluster: Still creating... [30s elapsed]
 
 ### 5. Route Table 연결
 
-```yaml
+```terraform
 data "ncloud_route_table" "route_table" {
   vpc_no                = ncloud_vpc.vpc.id
   supported_subnet_type = "PRIVATE"
