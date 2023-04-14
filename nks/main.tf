@@ -115,16 +115,16 @@ resource "ncloud_nks_node_pool" "node_pool" {
 
 // for kubernetes cluster to access internet
 data "ncloud_route_table" "route_table" {
-  vpc_no = ncloud_vpc.vpc.id
+  vpc_no                = ncloud_vpc.vpc.id
   supported_subnet_type = "PRIVATE"
 }
 
 resource "ncloud_route" "route_table" {
-  route_table_no = data.ncloud_route_table.route_table.id
-  destination_cidr_block = "0.0.0.0/0"
-  target_type = "NATGW"
-  target_name = ncloud_nat_gateway.nat.name
-  target_no = ncloud_nat_gateway.nat.id
+  route_table_no          = data.ncloud_route_table.route_table.id
+  destination_cidr_block  = "0.0.0.0/0"
+  target_type             = "NATGW"
+  target_name             = ncloud_nat_gateway.nat.name
+  target_no               = ncloud_nat_gateway.nat.id
 }
 
 // Bastion Server
