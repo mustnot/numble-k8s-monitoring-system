@@ -16,8 +16,4 @@ spec:
     path: {{ .name }}
     repoURL: {{ $.Values.spec.source.repoURL }}
     targetRevision: {{ $.Values.spec.source.targetRevision }}
-  {{- if .ignoreDifferences }}
-  ignoreDifferences:
-    {{- toYaml .ignoreDifferences | nindent 4 }}
-  {{- end }}
 {{- end }}
