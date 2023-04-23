@@ -4,3 +4,9 @@ spec:
   source:
     repoURL: https://github.com/mustnot/numble-k8s-monitoring-system
     targetRevision: HEAD
+
+apps:
+  - name: argocd
+    namespace: argocd
+  - name: nginx
+    namespace: default
