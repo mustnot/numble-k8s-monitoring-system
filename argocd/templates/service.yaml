@@ -122,6 +122,7 @@ metadata:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: argocd-server
     app.kubernetes.io/part-of: argocd
+    service.beta.kubernetes.io/ncloud-load-balancer-layer-type: 'nplb'
   name: argocd-server
 spec:
   ports:
@@ -135,6 +136,7 @@ spec:
     targetPort: 8080
   selector:
     app.kubernetes.io/name: argocd-server
+  type: LoadBalancer
 ---
 apiVersion: v1
 kind: Service
