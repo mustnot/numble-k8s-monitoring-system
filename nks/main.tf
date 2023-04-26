@@ -128,48 +128,48 @@ resource "ncloud_route" "route_table" {
 }
 
 // Bastion Server
-resource "ncloud_subnet" "public_subnet" {
-  vpc_no         = ncloud_vpc.vpc.id
-  subnet         = "10.0.2.0/24"
-  zone           = "KR-1"
-  network_acl_no = ncloud_vpc.vpc.default_network_acl_no
-  subnet_type    = "PUBLIC"
-  usage_type     = "GEN"
-}
+# resource "ncloud_subnet" "public_subnet" {
+#   vpc_no         = ncloud_vpc.vpc.id
+#   subnet         = "10.0.2.0/24"
+#   zone           = "KR-1"
+#   network_acl_no = ncloud_vpc.vpc.default_network_acl_no
+#   subnet_type    = "PUBLIC"
+#   usage_type     = "GEN"
+# }
 
-data "ncloud_server_product" "bastion" {
-  server_image_product_code = data.ncloud_server_image.ubuntu_image.product_code
+# data "ncloud_server_product" "bastion" {
+#   server_image_product_code = data.ncloud_server_image.ubuntu_image.product_code
 
-  filter {
-    name = "product_type"
-    values = [ "STAND" ]
-  }
+#   filter {
+#     name = "product_type"
+#     values = [ "STAND" ]
+#   }
 
-  filter {
-    name = "cpu_count"
-    values = [ 2 ]
-  }
+#   filter {
+#     name = "cpu_count"
+#     values = [ 2 ]
+#   }
 
-  filter {
-    name = "memory_size"
-    values = [ "8GB" ]
-  }
+#   filter {
+#     name = "memory_size"
+#     values = [ "8GB" ]
+#   }
 
-  filter {
-    name = "product_code"
-    values = [ "SSD" ]
-    regex = true
-  }
-}
+#   filter {
+#     name = "product_code"
+#     values = [ "SSD" ]
+#     regex = true
+#   }
+# }
 
-resource "ncloud_server" "bastion" {
-  name                      = "numble-bastion"
-  subnet_no                 = ncloud_subnet.public_subnet.id
-  server_image_product_code = data.ncloud_server_image.ubuntu_image.product_code
-  server_product_code       = data.ncloud_server_product.bastion.product_code
-  login_key_name            = ncloud_login_key.loginkey.key_name
-}
+# resource "ncloud_server" "bastion" {
+#   name                      = "numble-bastion"
+#   subnet_no                 = ncloud_subnet.public_subnet.id
+#   server_image_product_code = data.ncloud_server_image.ubuntu_image.product_code
+#   server_product_code       = data.ncloud_server_product.bastion.product_code
+#   login_key_name            = ncloud_login_key.loginkey.key_name
+# }
 
-resource "ncloud_public_ip" "bastion" {
-  server_instance_no = ncloud_server.bastion.id
-}
+# resource "ncloud_public_ip" "bastion" {
+  # server_instance_no = ncloud_server.bastion.id
+# }
