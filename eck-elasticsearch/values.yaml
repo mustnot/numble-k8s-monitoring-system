@@ -160,7 +160,7 @@ volumeClaimDeletePolicy: ""
 #
 nodeSets:
 - name: default
-  count: 1
+  count: 3
   config:
     node.store.allow_mmap: false
     xpack.monitoring.collection.enabled: true
@@ -171,7 +171,7 @@ nodeSets:
         resources:
           limits:
             # cpu: 1
-            memory: 2Gi
+            memory: 1Gi
           requests:
             # cpu: 1
-            memory: 2Gi
+            memory: 1Gi
