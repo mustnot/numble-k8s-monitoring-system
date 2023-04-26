@@ -10,5 +10,5 @@ spec:
     targetPort: 5601
     protocol: TCP
   selector:
-    app: kibana
+    app: eck-kibana
   type: LoadBalancer
