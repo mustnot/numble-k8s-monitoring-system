@@ -10,3 +10,11 @@ apps:
     namespace: argocd
   - name: nginx
     namespace: default
+  - name: eck-operator
+    namespace: elastic-system
+  - name: eck-elasticsearch
+    namespace: elastic-system
+  - name: eck-kibana
+    namespace: elastic-system
+  - name: eck-beats
+    namespace: elastic-system
