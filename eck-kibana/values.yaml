@@ -37,8 +37,16 @@ spec:
   #
   elasticsearchRef:
     name: eck-elasticsearch
+    namespace: elastic
     # Optional namespace reference to Elasticsearch resource.
     # If not specified, then the namespace of the Kibana resource
     # will be assumed.
     #
     # namespace: default
+  http:
+    service:
+      spec:
+        type: LoadBalancer
+      tls:
+        selfSignedCertificate:
+          disabled: true
