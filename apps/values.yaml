@@ -11,10 +11,10 @@ apps:
   - name: nginx
     namespace: default
   - name: eck-operator
-    namespace: elastic-system
+    namespace: elastic
   - name: eck-elasticsearch
-    namespace: elastic-system
+    namespace: elastic
   - name: eck-kibana
-    namespace: elastic-system
+    namespace: elastic
   - name: eck-beats
-    namespace: elastic-system
+    namespace: elastic
