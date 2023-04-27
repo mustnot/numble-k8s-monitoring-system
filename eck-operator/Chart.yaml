@@ -10,9 +10,9 @@ home: https://github.com/elastic/cloud-on-k8s
 
 type: application
 
-version: 2.8.0
+version: 2.7.0
 
-appVersion: 2.8.0
+appVersion: 2.7.0
 
 kubeVersion: ">=1.21.0-0"
 
