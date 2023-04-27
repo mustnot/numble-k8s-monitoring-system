@@ -68,7 +68,7 @@ extraEnvs: []
 # Allows you to load environment variables from kubernetes secret or config map
 envFrom:
   - secretRef:
-      name: env-secret
+      name: eck-elasticsearch-es-elastic-user
 # - configMapRef:
 #     name: config-map
 
