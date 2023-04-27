@@ -23,3 +23,5 @@ apps:
     namespace: elastic
   - name: eck-beats
     namespace: elastic
+  - name: logstash
+    namespace: elastic
