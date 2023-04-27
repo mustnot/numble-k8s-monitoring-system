@@ -9,7 +9,7 @@ replicas: 1
 logstashConfig:
  logstash.yml: |
   http.host: "0.0.0.0"
-  xpack.monitoring.elasticsearch.hosts: [ "http://eck-elasticsearch-es-http:9200" ]
+  xpack.monitoring.elasticsearch.hosts: [ "https://eck-elasticsearch-es-http:9200" ]
   xpack.monitoring.elasticsearch.ssl.verification_mode: none
   xpack.monitoring.elasticsearch.username: "elastic"
   xpack.monitoring.elasticsearch.password: "${elastic}"
