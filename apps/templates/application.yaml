@@ -10,12 +10,12 @@ metadata:
 spec:
   destination:
     namespace: {{ .namespace }}
-    server: https://kubernetes.default.svc
+    server: {{ $.Values.spec.destination.server }}
   project: default
   source:
     path: {{ .name }}
-    repoURL: {{ $.Values.repoURL }}
-    targetRevision: HEAD
+    repoURL: {{ $.Values.spec.source.repoURL }}
+    targetRevision: {{ $.Values.spec.source.targetRevision }}
   {{- if .ignoreDifferences }}
   ignoreDifferences:
     {{- toYaml .ignoreDifferences | nindent 4 }}
