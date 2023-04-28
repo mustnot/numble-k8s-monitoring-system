@@ -754,7 +754,7 @@ alertmanager:
 ##
 grafana:
   enabled: true
-  namespaceOverride: "grafana"
+  namespaceOverride: ""
 
   ## ForceDeployDatasources Create datasource configmap even if grafana deployment has been disabled
   ##
