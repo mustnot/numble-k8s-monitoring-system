@@ -942,7 +942,7 @@ grafana:
 ## Flag to disable all the kubernetes component scrapers
 ##
 kubernetesServiceMonitors:
-  enabled: true
+  enabled: false
 
 ## Component scraping the kube api server
 ##
