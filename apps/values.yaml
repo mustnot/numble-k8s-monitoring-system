@@ -25,5 +25,5 @@ apps:
     namespace: elastic
   - name: logstash
     namespace: elastic
-  - name: prometheus-stack
+  - name: kube-prometheus-stack
     namespace: prometheus
