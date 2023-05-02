@@ -7,7 +7,7 @@ Numble에서 진행하는 [Kubernetes Monitoring System 구축하기 프로젝�
 1. [Ncloud에 Kubernetes Service 생성하기 (with Terraform)](https://blog.mustnot.dev/ncloud-create-kubernetes-cluster-with-terraform)
 2. [Kubernetes 오브젝트 이해하기](https://blog.mustnot.dev/kubernetes-objects-summarize)
 3. [Ncloud K8s Cluster와 Kubectl 연결 및 Dashboard 배포하기](https://blog.mustnot.dev/ncloud-kubernetes-cluster-deploy-dashboard)
-4. Ncloud K8s Nginx 컨테이너 띄우기(작성 중)
+4. [Ncloud K8s Nginx 컨테이너 띄우기](https://blog.mustnot.dev/ncloud-kubernetes-apply-nginx-service-and-load-balancer)
 
 <br>
 
