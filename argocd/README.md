@@ -76,7 +76,7 @@ $ kubectl port-forward svc/argocd-server -n argocd 8080:443
 
 정상적으로 실행이 되었다면 [https://localhost:8080](https://localhost:8080) 주소를 입력하여 페이지에 접근한다.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/74dd659f-1722-4ec3-b3d2-f083098ed31f/Untitled.png)
+![image](https://user-images.githubusercontent.com/52126612/235593340-8ae942ac-9973-40f1-be80-e96e2160002d.png)
 
 아직 생성된 계정이 없기 때문에 먼저 ArgoCD에 `initial-password` 명령어를 이용하여 admin 계정의 패스워드를 초기화하여 생성한다.
 
@@ -90,10 +90,12 @@ n4CmxERI...
 
 로그인하여 ArgoCD 메인 화면에 접근하면 아래와 같은 화면을 볼 수 있다.
 
-![ArgoCD 첫 화면](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/5cdad957-6783-4fb2-a9ba-299d71a0de1f/Untitled.png)
+![image](https://user-images.githubusercontent.com/52126612/235593378-2bbbb955-48ad-438b-8635-49a6184f1529.png)
 
 ArgoCD 첫 화면
 
 ### 부록. ArgoCD에 app of apps pattern을 이용하여 application을 추가한 경우
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/88364fa4-33c6-4273-a378-0c5f4f173b48/Untitled.png)
+![image](https://user-images.githubusercontent.com/52126612/235593444-faf7cfc2-0f50-44df-a377-678099ec16ca.png)
+
+로그인하여 ArgoCD 메인 화면에 접근하면 아래와 같은 화면을 볼 수 있다.
