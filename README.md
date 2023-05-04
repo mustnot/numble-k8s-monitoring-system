@@ -13,4 +13,8 @@ Numble에서 진행하는 [Kubernetes Monitoring System 구축하기 프로젝�
 
 ## Part 2. ArgoCD
 1. [Helm으로 ArgoCD 설치 및 실행](https://blog.mustnot.dev/ncloud-kubernetes-install-argocd-using-helm)
-2. Helm app of apps 패턴 적용하기(작성 중)
+2. [ArgoCD app of apps 패턴 적용하기](https://blog.mustnot.dev/apply-to-argocd-app-of-apps-pattern)
+
+<br>
+
+## Part 3. Log Monitoring
